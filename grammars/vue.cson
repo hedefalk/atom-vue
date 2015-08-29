@@ -171,7 +171,7 @@ patterns: [
       "3":
         name: "punctuation.definition.tag.html"
     end: "(</)((?i:style))(>)(?:\\s*\\n)?"
-    name: "source.sass.embedded.html"
+    name: "source.css.scss.embedded.html"
     patterns: [
       {
         include: "#tag-stuff"
@@ -184,7 +184,7 @@ patterns: [
         end: "(?=</(?i:style))"
         patterns: [
           {
-            include: "source.scss"
+            include: "source.css.scss"
           }
         ]
       }
