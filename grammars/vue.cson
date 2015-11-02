@@ -271,7 +271,7 @@ patterns: [
         beginCaptures:
           "1":
             name: "punctuation.definition.tag.html"
-        end: "(?=</(?i:style))"
+        end: "(?=</(?i:template))"
         patterns: [
           {
             include: "source.jade"
