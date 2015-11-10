@@ -417,7 +417,7 @@ patterns: [
     ]
   }
   {
-    begin: "(</?)([a-zA-Z0-9:]+)"
+    begin: "(</?)([a-zA-Z0-9:]+(-[a-zA-Z0-9:]+)*)"
     beginCaptures:
       "1":
         name: "punctuation.definition.tag.begin.html"
