@@ -651,4 +651,4 @@ repository:
         include: "#embedded-code"
       }
     ]
-scopeName: "text.html.basic"
+scopeName: "text.html.vue"
