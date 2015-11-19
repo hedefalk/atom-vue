@@ -104,7 +104,7 @@ patterns: [
     include: "#embedded-code"
   }
   {
-    begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=\"stylus\")"
+    begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=[\"']stylus[\"'])"
     captures:
       "1":
         name: "punctuation.definition.tag.html"
@@ -133,7 +133,7 @@ patterns: [
     ]
   }
   {
-    begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=\"(?:sass)\")"
+    begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=[\"'](?:sass)[\"'])"
     captures:
       "1":
         name: "punctuation.definition.tag.html"
@@ -162,7 +162,7 @@ patterns: [
     ]
   }
   {
-    begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=\"(?:scss)\")"
+    begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=[\"'](?:scss)[\"'])"
     captures:
       "1":
         name: "punctuation.definition.tag.html"
@@ -191,7 +191,7 @@ patterns: [
     ]
   }
   {
-    begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=\"less\")"
+    begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=[\"']less[\"'])"
     captures:
       "1":
         name: "punctuation.definition.tag.html"
@@ -220,7 +220,7 @@ patterns: [
     ]
   }
   {
-    begin: "(?:^\\s+)?(<)((?i:style))\\b(?![^>]*/>|lang=\".*\")"
+    begin: "(?:^\\s+)?(<)((?i:style))\\b(?![^>]*/>|lang=[\"'].*[\"'])"
     captures:
       "1":
         name: "punctuation.definition.tag.html"
@@ -252,7 +252,7 @@ patterns: [
     ]
   }
   {
-    begin: "(?:^\\s+)?(<)((?i:template))\\b(?=[^>]*lang=\"jade\")"
+    begin: "(?:^\\s+)?(<)((?i:template))\\b(?=[^>]*lang=[\"']jade[\"'])"
     captures:
       "1":
         name: "punctuation.definition.tag.html"
@@ -281,7 +281,7 @@ patterns: [
     ]
   }
   {
-    begin: "(?:^\\s+)?(<)((?i:script))\\b(?=[^>]*lang=\"coffee\")"
+    begin: "(?:^\\s+)?(<)((?i:script))\\b(?=[^>]*lang=[\"']coffee[\"'])"
     beginCaptures:
       "1":
         name: "punctuation.definition.tag.html"
@@ -313,7 +313,7 @@ patterns: [
     ]
   }
   {
-    begin: "(?:^\\s+)?(<)((?i:script))\\b(?![^>]*/>|lang=\".*\")"
+    begin: "(?:^\\s+)?(<)((?i:script))\\b(?![^>]*/>|lang=[\"'].*[\"'])"
     beginCaptures:
       "1":
         name: "punctuation.definition.tag.html"
