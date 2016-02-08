@@ -126,7 +126,7 @@ patterns: [
         end: "(?=</(?i:style))"
         patterns: [
           {
-            include: "source.stylus"
+            include: "source.css.stylus"
           }
         ]
       }
