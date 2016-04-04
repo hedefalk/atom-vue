@@ -133,6 +133,35 @@ patterns: [
     ]
   }
   {
+    begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=[\"'](?:postcss)[\"'])"
+    captures:
+      "1":
+        name: "punctuation.definition.tag.html"
+      "2":
+        name: "entity.name.tag.style.html"
+      "3":
+        name: "punctuation.definition.tag.html"
+    end: "(</)((?i:style))(>)(?:\\s*\\n)?"
+    name: "source.css.postcss.embedded.html"
+    patterns: [
+      {
+        include: "#tag-stuff"
+      }
+      {
+        begin: "(>)"
+        beginCaptures:
+          "1":
+            name: "punctuation.definition.tag.html"
+        end: "(?=</(?i:style))"
+        patterns: [
+          {
+            include: "source.css.postcss"
+          }
+        ]
+      }
+    ]
+  }
+  {
     begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=[\"'](?:sass)[\"'])"
     captures:
       "1":
