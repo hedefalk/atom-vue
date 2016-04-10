@@ -4,6 +4,7 @@ fileTypes: [
 name: "Vue Component"
 patterns: [
   {
+    name: "meta.tag.any.html"
     begin: "(<)([a-zA-Z0-9:]++)(?=[^>]*></\\2>)"
     beginCaptures:
       "1":
@@ -22,7 +23,6 @@ patterns: [
         name: "entity.name.tag.html"
       "5":
         name: "punctuation.definition.tag.end.html"
-    name: "meta.tag.any.html"
     patterns: [
       {
         include: "#tag-stuff"
@@ -30,14 +30,14 @@ patterns: [
     ]
   }
   {
+    name: "meta.tag.preprocessor.xml.html"
     begin: "(<\\?)(xml)"
+    end: "(\\?>)"
     captures:
       "1":
         name: "punctuation.definition.tag.html"
       "2":
         name: "entity.name.tag.xml.html"
-    end: "(\\?>)"
-    name: "meta.tag.preprocessor.xml.html"
     patterns: [
       {
         include: "#tag-generic-attribute"
@@ -51,16 +51,16 @@ patterns: [
     ]
   }
   {
+    name: "comment.block.html"
     begin: "<!--"
+    end: "--\\s*>"
     captures:
       "0":
         name: "punctuation.definition.comment.html"
-    end: "--\\s*>"
-    name: "comment.block.html"
     patterns: [
       {
-        match: "--"
         name: "invalid.illegal.bad-comments-or-CDATA.html"
+        match: "--"
       }
       {
         include: "#embedded-code"
@@ -68,35 +68,35 @@ patterns: [
     ]
   }
   {
+    name: "meta.tag.sgml.html"
     begin: "<!"
+    end: ">"
     captures:
       "0":
         name: "punctuation.definition.tag.html"
-    end: ">"
-    name: "meta.tag.sgml.html"
     patterns: [
       {
+        name: "meta.tag.sgml.doctype.html"
         begin: "(?i:DOCTYPE)"
+        end: "(?=>)"
         captures:
           "1":
             name: "entity.name.tag.doctype.html"
-        end: "(?=>)"
-        name: "meta.tag.sgml.doctype.html"
         patterns: [
           {
-            match: "\"[^\">]*\""
             name: "string.quoted.double.doctype.identifiers-and-DTDs.html"
+            match: "\"[^\">]*\""
           }
         ]
       }
       {
+        name: "constant.other.inline-data.html"
         begin: "\\[CDATA\\["
         end: "]](?=>)"
-        name: "constant.other.inline-data.html"
       }
       {
-        match: "(\\s*)(?!--|>)\\S(\\s*)"
         name: "invalid.illegal.bad-comments-or-CDATA.html"
+        match: "(\\s*)(?!--|>)\\S(\\s*)"
       }
     ]
   }
@@ -104,7 +104,9 @@ patterns: [
     include: "#embedded-code"
   }
   {
+    name: "source.stylus.embedded.html"
     begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=[\"']stylus[\"'])"
+    end: "(</)((?i:style))(>)(?:\\s*\\n)?"
     captures:
       "1":
         name: "punctuation.definition.tag.html"
@@ -112,8 +114,6 @@ patterns: [
         name: "entity.name.tag.style.html"
       "3":
         name: "punctuation.definition.tag.html"
-    end: "(</)((?i:style))(>)(?:\\s*\\n)?"
-    name: "source.stylus.embedded.html"
     patterns: [
       {
         include: "#tag-stuff"
@@ -133,7 +133,9 @@ patterns: [
     ]
   }
   {
+    name: "source.css.postcss.embedded.html"
     begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=[\"'](?:postcss)[\"'])"
+    end: "(</)((?i:style))(>)(?:\\s*\\n)?"
     captures:
       "1":
         name: "punctuation.definition.tag.html"
@@ -141,8 +143,6 @@ patterns: [
         name: "entity.name.tag.style.html"
       "3":
         name: "punctuation.definition.tag.html"
-    end: "(</)((?i:style))(>)(?:\\s*\\n)?"
-    name: "source.css.postcss.embedded.html"
     patterns: [
       {
         include: "#tag-stuff"
@@ -162,7 +162,9 @@ patterns: [
     ]
   }
   {
+    name: "source.sass.embedded.html"
     begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=[\"'](?:sass)[\"'])"
+    end: "(</)((?i:style))(>)(?:\\s*\\n)?"
     captures:
       "1":
         name: "punctuation.definition.tag.html"
@@ -170,8 +172,6 @@ patterns: [
         name: "entity.name.tag.style.html"
       "3":
         name: "punctuation.definition.tag.html"
-    end: "(</)((?i:style))(>)(?:\\s*\\n)?"
-    name: "source.sass.embedded.html"
     patterns: [
       {
         include: "#tag-stuff"
@@ -191,7 +191,9 @@ patterns: [
     ]
   }
   {
+    name: "source.css.scss.embedded.html"
     begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=[\"'](?:scss)[\"'])"
+    end: "(</)((?i:style))(>)(?:\\s*\\n)?"
     captures:
       "1":
         name: "punctuation.definition.tag.html"
@@ -199,8 +201,6 @@ patterns: [
         name: "entity.name.tag.style.html"
       "3":
         name: "punctuation.definition.tag.html"
-    end: "(</)((?i:style))(>)(?:\\s*\\n)?"
-    name: "source.css.scss.embedded.html"
     patterns: [
       {
         include: "#tag-stuff"
@@ -220,6 +220,7 @@ patterns: [
     ]
   }
   {
+    name: "source.css.less.embedded.html"
     begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=[\"']less[\"'])"
     captures:
       "1":
@@ -229,7 +230,6 @@ patterns: [
       "3":
         name: "punctuation.definition.tag.html"
     end: "(</)((?i:style))(>)(?:\\s*\\n)?"
-    name: "source.css.less.embedded.html"
     patterns: [
       {
         include: "#tag-stuff"
@@ -249,6 +249,7 @@ patterns: [
     ]
   }
   {
+    name: "source.css.embedded.html"
     begin: "(?:^\\s+)?(<)((?i:style))\\b(?![^>]*/>|lang=[\"'].*[\"'])"
     captures:
       "1":
@@ -258,7 +259,6 @@ patterns: [
       "3":
         name: "punctuation.definition.tag.html"
     end: "(</)((?i:style))(>)(?:\\s*\\n)?"
-    name: "source.css.embedded.html"
     patterns: [
       {
         include: "#tag-stuff"
@@ -281,7 +281,9 @@ patterns: [
     ]
   }
   {
+    name: "source.jade.embedded.html"
     begin: "(?:^\\s+)?(<)((?i:template))\\b(?=[^>]*lang=[\"']jade[\"'])"
+    end: "(</)((?i:template))(>)(?:\\s*\\n)?"
     captures:
       "1":
         name: "punctuation.definition.tag.html"
@@ -289,8 +291,6 @@ patterns: [
         name: "entity.name.tag.style.html"
       "3":
         name: "punctuation.definition.tag.html"
-    end: "(</)((?i:template))(>)(?:\\s*\\n)?"
-    name: "source.jade.embedded.html"
     patterns: [
       {
         include: "#tag-stuff"
@@ -310,6 +310,7 @@ patterns: [
     ]
   }
   {
+    name: "source.coffee.embedded.html"
     begin: "(?:^\\s+)?(<)((?i:script))\\b(?=[^>]*lang=[\"']coffee[\"'])"
     beginCaptures:
       "1":
@@ -320,19 +321,18 @@ patterns: [
     endCaptures:
       "2":
         name: "punctuation.definition.tag.html"
-    name: "source.coffee.embedded.html"
     patterns: [
       {
         include: "#tag-stuff"
       }
       {
         begin: "(?<!</(?:script|SCRIPT))(>)"
+        end: "(</)((?i:script))"
         captures:
           "1":
             name: "punctuation.definition.tag.html"
           "2":
             name: "entity.name.tag.script.html"
-        end: "(</)((?i:script))"
         patterns: [
           {
             include: "source.coffee"
@@ -342,6 +342,7 @@ patterns: [
     ]
   }
   {
+    name: "source.js.embedded.html"
     begin: "(?:^\\s+)?(<)((?i:script))\\b(?![^>]*/>|lang=[\"'].*[\"'])"
     beginCaptures:
       "1":
@@ -352,34 +353,33 @@ patterns: [
     endCaptures:
       "2":
         name: "punctuation.definition.tag.html"
-    name: "source.js.embedded.html"
     patterns: [
       {
         include: "#tag-stuff"
       }
       {
         begin: "(?<!</(?:script|SCRIPT))(>)"
+        end: "(</)((?i:script))"
         captures:
           "1":
             name: "punctuation.definition.tag.html"
           "2":
             name: "entity.name.tag.script.html"
-        end: "(</)((?i:script))"
         patterns: [
           {
+            name: "comment.line.double-slash.js"
+            match: "(//).*?((?=</script)|$\\n?)"
             captures:
               "1":
                 name: "punctuation.definition.comment.js"
-            match: "(//).*?((?=</script)|$\\n?)"
-            name: "comment.line.double-slash.js"
           }
           {
+            name: "comment.block.js"
             begin: "/\\*"
+            end: "\\*/|(?=</script)"
             captures:
               "0":
                 name: "punctuation.definition.comment.js"
-            end: "\\*/|(?=</script)"
-            name: "comment.block.js"
           }
           {
             include: "#php"
@@ -392,8 +392,9 @@ patterns: [
     ]
   }
   {
+    name: "meta.tag.structure.any.html"
     begin: "(</?)((?i:body|head|html)\\b)"
-    captures:
+    beginCaptures:
       "1":
         name: "punctuation.definition.tag.begin.html"
       "2":
@@ -402,7 +403,6 @@ patterns: [
     endCaptures:
       "1":
         name: "punctuation.definition.tag.end.html"
-    name: "meta.tag.structure.any.html"
     patterns: [
       {
         include: "#tag-stuff"
@@ -410,6 +410,7 @@ patterns: [
     ]
   }
   {
+    name: "meta.tag.block.any.html"
     begin: "(</?)((?i:address|blockquote|dd|div|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|menu|pre)\\b)(?!-)"
     beginCaptures:
       "1":
@@ -420,7 +421,6 @@ patterns: [
     endCaptures:
       "1":
         name: "punctuation.definition.tag.end.html"
-    name: "meta.tag.block.any.html"
     patterns: [
       {
         include: "#tag-stuff"
@@ -428,6 +428,7 @@ patterns: [
     ]
   }
   {
+    name: "meta.tag.inline.any.html"
     begin: "(</?)((?i:a|abbr|acronym|area|b|base|basefont|bdo|big|br|button|caption|cite|code|col|colgroup|del|dfn|em|font|head|html|i|img|input|ins|isindex|kbd|label|legend|li|link|map|meta|noscript|optgroup|option|param|q|s|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|u|var)\\b)(?!-)"
     beginCaptures:
       "1":
@@ -438,7 +439,6 @@ patterns: [
     endCaptures:
       "1":
         name: "punctuation.definition.tag.end.html"
-    name: "meta.tag.inline.any.html"
     patterns: [
       {
         include: "#tag-stuff"
@@ -446,6 +446,7 @@ patterns: [
     ]
   }
   {
+    name: "meta.tag.other.html"
     begin: "(</?)([a-zA-Z0-9:]+(-[a-zA-Z0-9:]+)*)"
     beginCaptures:
       "1":
@@ -456,7 +457,6 @@ patterns: [
     endCaptures:
       "1":
         name: "punctuation.definition.tag.end.html"
-    name: "meta.tag.other.html"
     patterns: [
       {
         include: "#tag-stuff"
@@ -467,15 +467,139 @@ patterns: [
     include: "#entities"
   }
   {
-    match: "<>"
     name: "invalid.illegal.incomplete.html"
+    match: "<>"
   }
   {
-    match: "<"
     name: "invalid.illegal.bad-angle-bracket.html"
+    match: "<"
   }
 ]
 repository:
+  entities:
+    patterns: [
+      {
+        name: "constant.character.entity.html"
+        captures:
+          "1":
+            name: "punctuation.definition.entity.html"
+          "3":
+            name: "punctuation.definition.entity.html"
+        match: "(&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)"
+      }
+      {
+        name: "invalid.illegal.bad-ampersand.html"
+        match: "&"
+      }
+    ]
+  "string-double-quoted":
+    name: "string.quoted.double.html"
+    begin: "\""
+    beginCaptures:
+      "0":
+        name: "punctuation.definition.string.begin.html"
+    end: "\""
+    endCaptures:
+      "0":
+        name: "punctuation.definition.string.end.html"
+    patterns: [
+      {
+        include: "#embedded-code"
+      }
+      {
+        include: "#entities"
+      }
+    ]
+  "string-single-quoted":
+    name: "string.quoted.single.html"
+    begin: "'"
+    beginCaptures:
+      "0":
+        name: "punctuation.definition.string.begin.html"
+    end: "'"
+    endCaptures:
+      "0":
+        name: "punctuation.definition.string.end.html"
+    patterns: [
+      {
+        include: "#embedded-code"
+      }
+      {
+        include: "#entities"
+      }
+    ]
+  "tag-generic-attribute":
+    name: "entity.other.attribute-name.html"
+    match: "\\b([a-zA-Z\\-:]+)"
+  "tag-id-attribute":
+    name: "meta.attribute-with-value.id.html"
+    begin: "\\b(id)\\b\\s*(=)"
+    end: "(?<='|\")"
+    captures:
+      "1":
+        name: "entity.other.attribute-name.id.html"
+      "2":
+        name: "punctuation.separator.key-value.html"
+    patterns: [
+      {
+        name: "string.quoted.double.html"
+        contentName: "meta.toc-list.id.html"
+        begin: "\""
+        beginCaptures:
+          "0":
+            name: "punctuation.definition.string.begin.html"
+        end: "\""
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.end.html"
+        patterns: [
+          {
+            include: "#embedded-code"
+          }
+          {
+            include: "#entities"
+          }
+        ]
+      }
+      {
+        name: "string.quoted.single.html"
+        contentName: "meta.toc-list.id.html"
+        begin: "'"
+        beginCaptures:
+          "0":
+            name: "punctuation.definition.string.begin.html"
+        end: "'"
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.end.html"
+        patterns: [
+          {
+            include: "#embedded-code"
+          }
+          {
+            include: "#entities"
+          }
+        ]
+      }
+    ]
+  "tag-stuff":
+    patterns: [
+      {
+        include: "#tag-id-attribute"
+      }
+      {
+        include: "#tag-generic-attribute"
+      }
+      {
+        include: "#string-double-quoted"
+      }
+      {
+        include: "#string-single-quoted"
+      }
+      {
+        include: "#embedded-code"
+      }
+    ]
   "embedded-code":
     patterns: [
       {
@@ -488,22 +612,6 @@ repository:
         include: "#python"
       }
     ]
-  entities:
-    patterns: [
-      {
-        captures:
-          "1":
-            name: "punctuation.definition.entity.html"
-          "3":
-            name: "punctuation.definition.entity.html"
-        match: "(&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)"
-        name: "constant.character.entity.html"
-      }
-      {
-        match: "&"
-        name: "invalid.illegal.bad-ampersand.html"
-      }
-    ]
   php:
     begin: "(?=(^\\s*)?<\\?)"
     end: "(?!(^\\s*)?<\\?)"
@@ -513,9 +621,9 @@ repository:
       }
     ]
   python:
+    name: "source.python.embedded.html"
     begin: "(?:^\\s*)<\\?python(?!.*\\?>)"
     end: "\\?>(?:\\s*$\\n)?"
-    name: "source.python.embedded.html"
     patterns: [
       {
         include: "source.python"
@@ -570,114 +678,6 @@ repository:
             include: "source.ruby"
           }
         ]
-      }
-    ]
-  "string-double-quoted":
-    begin: "\""
-    beginCaptures:
-      "0":
-        name: "punctuation.definition.string.begin.html"
-    end: "\""
-    endCaptures:
-      "0":
-        name: "punctuation.definition.string.end.html"
-    name: "string.quoted.double.html"
-    patterns: [
-      {
-        include: "#embedded-code"
-      }
-      {
-        include: "#entities"
-      }
-    ]
-  "string-single-quoted":
-    begin: "'"
-    beginCaptures:
-      "0":
-        name: "punctuation.definition.string.begin.html"
-    end: "'"
-    endCaptures:
-      "0":
-        name: "punctuation.definition.string.end.html"
-    name: "string.quoted.single.html"
-    patterns: [
-      {
-        include: "#embedded-code"
-      }
-      {
-        include: "#entities"
-      }
-    ]
-  "tag-generic-attribute":
-    match: "\\b([a-zA-Z\\-:]+)"
-    name: "entity.other.attribute-name.html"
-  "tag-id-attribute":
-    begin: "\\b(id)\\b\\s*(=)"
-    captures:
-      "1":
-        name: "entity.other.attribute-name.id.html"
-      "2":
-        name: "punctuation.separator.key-value.html"
-    end: "(?<='|\")"
-    name: "meta.attribute-with-value.id.html"
-    patterns: [
-      {
-        begin: "\""
-        beginCaptures:
-          "0":
-            name: "punctuation.definition.string.begin.html"
-        contentName: "meta.toc-list.id.html"
-        end: "\""
-        endCaptures:
-          "0":
-            name: "punctuation.definition.string.end.html"
-        name: "string.quoted.double.html"
-        patterns: [
-          {
-            include: "#embedded-code"
-          }
-          {
-            include: "#entities"
-          }
-        ]
-      }
-      {
-        begin: "'"
-        beginCaptures:
-          "0":
-            name: "punctuation.definition.string.begin.html"
-        contentName: "meta.toc-list.id.html"
-        end: "'"
-        endCaptures:
-          "0":
-            name: "punctuation.definition.string.end.html"
-        name: "string.quoted.single.html"
-        patterns: [
-          {
-            include: "#embedded-code"
-          }
-          {
-            include: "#entities"
-          }
-        ]
-      }
-    ]
-  "tag-stuff":
-    patterns: [
-      {
-        include: "#tag-id-attribute"
-      }
-      {
-        include: "#tag-generic-attribute"
-      }
-      {
-        include: "#string-double-quoted"
-      }
-      {
-        include: "#string-single-quoted"
-      }
-      {
-        include: "#embedded-code"
       }
     ]
 scopeName: "text.html.vue"
