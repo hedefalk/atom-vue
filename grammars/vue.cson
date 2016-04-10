@@ -492,6 +492,57 @@ repository:
         match: "&"
       }
     ]
+  "vue-directive":
+    name: "meta.directive.vue"
+    begin: "(?:\\b(v\-)|(:|@))([a-zA-Z\-]+)(?:\:([a-zA-Z\-]+))?(?:\.([a-zA-Z\-]+))*\s*(=)"
+    end: "(?<='|\")"
+    captures:
+      "1":
+        name: "entity.other.attribute-name.html"
+      "2":
+        name: "punctuation.separator.key-value.html"
+      "3":
+        name: "entity.other.attribute-name.html"
+      "4":
+        name: "entity.other.attribute-name.html"
+      "5":
+        name: "entity.other.attribute-name.html"
+      "6":
+        name: "punctuation.separator.key-value.html"
+    patterns:[
+      {
+        name: "source.directive.vue"
+        begin: "\""
+        beginCaptures:
+          "0":
+            name: "punctuation.definition.string.begin.html"
+        end: "\""
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.end.html"
+        patterns: [
+          {
+            include: "source.js"
+          }
+        ]
+      }
+      {
+        name: "source.directive.vue"
+        begin: "'"
+        beginCaptures:
+          "0":
+            name: "punctuation.definition.string.begin.html"
+        end: "'"
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.end.html"
+        patterns: [
+          {
+            include: "source.js"
+          }
+        ]
+      }
+    ]
   "string-double-quoted":
     name: "string.quoted.double.html"
     begin: "\""
@@ -584,6 +635,9 @@ repository:
     ]
   "tag-stuff":
     patterns: [
+      {
+        include: "#vue-directive"
+      }
       {
         include: "#tag-id-attribute"
       }
