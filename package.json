@@ -1,6 +1,6 @@
 {
   "name": "language-vue",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "Syntax highlighting for vue component files",
   "repository": "https://github.com/hedefalk/atom-vue",
   "license": "MIT",
