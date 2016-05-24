@@ -526,7 +526,7 @@ repository:
     ]
   "vue-directive":
     name: "meta.directive.vue"
-    begin: "(?:\\b(v\-)|(:|@))([a-zA-Z\-]+)(?:\:([a-zA-Z\-]+))?(?:\.([a-zA-Z\-]+))*\s*(=)"
+    begin: "(?:\\b(v-)|(:|@))([a-zA-Z\-\:\.]+)\s*(=)"
     end: "(?<='|\")"
     captures:
       "1":
@@ -536,10 +536,6 @@ repository:
       "3":
         name: "entity.other.attribute-name.html"
       "4":
-        name: "entity.other.attribute-name.html"
-      "5":
-        name: "entity.other.attribute-name.html"
-      "6":
         name: "punctuation.separator.key-value.html"
     patterns:[
       {
