@@ -14,6 +14,7 @@
 <!--
   Highlight embedded expressions
   https://github.com/hedefalk/atom-vue/issues/21
+  https://github.com/hedefalk/atom-vue/issues/30
 -->
 
 <template>
@@ -21,6 +22,8 @@
     <div :class="{ a: true, b: false }"></div>
     <button @click="trigger('hello')">hello</button>
   </div>
+  <my-component :bar = "[0, 1, 2]"></my-component>
+  <my-component :bar-foo="[0, 1, 2]"></my-component>
 </template>
 
 <!--

@@ -526,7 +526,7 @@ repository:
     ]
   "vue-directive":
     name: "meta.directive.vue"
-    begin: "(?:\\b(v-)|(:|@))([a-zA-Z\-\:\.]+)\s*(=)"
+    begin: "(?:\\b(v-)|(:|@))([a-zA-Z\\-\\:\\.]+)\\s*(=)"
     end: "(?<='|\")"
     captures:
       "1":
