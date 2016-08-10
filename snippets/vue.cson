@@ -8,16 +8,16 @@
 
       <script>
       export default {
-        data: function () {
+      components: {},
+        data() {
           return {
-          }
+          };
         },
+        ready() {},
+        attached() {},
         computed: {},
-        ready: function () {},
-        attached: function () {},
         methods: {},
-        components: {}
-      }
+      };
       </script>
 
       <style lang="${2:css}">
