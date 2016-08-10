@@ -8,15 +8,15 @@
 
       <script>
       export default {
-      components: {},
         data() {
           return {
           };
         },
+        computed: {},
         ready() {},
         attached() {},
-        computed: {},
         methods: {},
+        components: {}
       };
       </script>
 
