@@ -403,6 +403,38 @@ patterns: [
     ]
   }
   {
+    name: "source.livescript.embedded.html"
+    begin: "(?:^\\s+)?(<)((?i:script))\\b(?=[^>]*lang=[\"']livescript[\"'])"
+    beginCaptures:
+      "1":
+        name: "punctuation.definition.tag.html"
+      "2":
+        name: "entity.name.tag.script.html"
+    end: "(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?"
+    endCaptures:
+      "2":
+        name: "punctuation.definition.tag.html"
+    patterns: [
+      {
+        include: "#tag-stuff"
+      }
+      {
+        begin: "(?<!</(?:script|SCRIPT))(>)"
+        end: "(</)((?i:script))"
+        captures:
+          "1":
+            name: "punctuation.definition.tag.html"
+          "2":
+            name: "entity.name.tag.script.html"
+        patterns: [
+          {
+            include: "source.livescript"
+          }
+        ]
+      }
+    ]
+  }
+  {
     name: "source.js.embedded.html"
     begin: "(?:^\\s+)?(<)((?i:script))\\b(?![^>]*/>|lang=[\"'].*[\"'])"
     beginCaptures:
