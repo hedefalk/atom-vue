@@ -8,16 +8,15 @@
 
       <script>
       export default {
-        data() {
-          return {
-          };
+        data () {
+          return { }
         },
         computed: {},
-        ready() {},
-        attached() {},
+        ready () {},
+        attached () {},
         methods: {},
         components: {}
-      };
+      }
       </script>
 
       <style lang="${2:css}">
