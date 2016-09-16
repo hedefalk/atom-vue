@@ -32,6 +32,7 @@
 <template>
   <div>
     {{ sucessful ? 'Yay!' : tryAgain() }}
+    {{{ '<b>dangerous</b> ' + '<i>html!</i>'  }}}
   </div>
 </template>
 
