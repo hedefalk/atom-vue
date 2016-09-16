@@ -27,6 +27,15 @@
 </template>
 
 <!--
+  Highlight template expressions -Kingdaro
+-->
+<template>
+  <div>
+    {{ sucessful ? 'Yay!' : tryAgain() }}
+  </div>
+</template>
+
+<!--
   Support source.pug
   https://github.com/hedefalk/atom-vue/issues/23
 -->
