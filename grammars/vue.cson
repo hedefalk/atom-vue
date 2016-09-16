@@ -4,6 +4,12 @@ fileTypes: [
 name: "Vue Component"
 patterns: [
   {
+    include: "#vue-template-expression"
+  }
+  {
+    include: "#vue-template-expression-html"
+  }
+  {
     name: "meta.tag.any.html"
     begin: "(<)([a-zA-Z0-9:]++)(?=[^>]*></\\2>)"
     beginCaptures:
@@ -821,6 +827,34 @@ repository:
             include: "source.ruby"
           }
         ]
+      }
+    ]
+  "vue-template-expression":
+    begin: '\\{\\{'
+    beginCaptures:
+      "0":
+        name: "meta.brace.curly.js"
+    end: '\\}\\}'
+    endCaptures:
+      "0":
+        name: "meta.brace.curly.js"
+    patterns: [
+      {
+        include: "source.js"
+      }
+    ]
+  "vue-template-expression-html":
+    begin: '\\{\\{\\{'
+    beginCaptures:
+      "0":
+        name: "meta.brace.curly.js"
+    end: '\\}\\}\\}'
+    endCaptures:
+      "0":
+        name: "meta.brace.curly.js"
+    patterns: [
+      {
+        include: "source.js"
       }
     ]
 scopeName: "text.html.vue"
