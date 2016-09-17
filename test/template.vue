@@ -27,12 +27,14 @@
 </template>
 
 <!--
-  Highlight template expressions -Kingdaro
+  Highlight template expressions (by @Kingdaro)
+  https://github.com/hedefalk/atom-vue/pull/38
 -->
+
 <template>
   <div>
-    {{ sucessful ? 'Yay!' : tryAgain() }}
-    {{{ '<b>dangerous</b> ' + '<i>html!</i>'  }}}
+    {{ successful ? 'Yay!' : tryAgain() }}
+    {{{ '<b>dangerous</b> ' + '<i>html!</i>' }}}
   </div>
 </template>
 

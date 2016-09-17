@@ -638,6 +638,34 @@ repository:
         ]
       }
     ]
+  "vue-template-expression":
+    begin: '\\{\\{'
+    beginCaptures:
+      "0":
+        name: "meta.brace.curly.js"
+    end: '\\}\\}'
+    endCaptures:
+      "0":
+        name: "meta.brace.curly.js"
+    patterns: [
+      {
+        include: "source.js"
+      }
+    ]
+  "vue-template-expression-html":
+    begin: '\\{\\{\\{'
+    beginCaptures:
+      "0":
+        name: "meta.brace.curly.js"
+    end: '\\}\\}\\}'
+    endCaptures:
+      "0":
+        name: "meta.brace.curly.js"
+    patterns: [
+      {
+        include: "source.js"
+      }
+    ]
   "string-double-quoted":
     name: "string.quoted.double.html"
     begin: "\""
@@ -827,34 +855,6 @@ repository:
             include: "source.ruby"
           }
         ]
-      }
-    ]
-  "vue-template-expression":
-    begin: '\\{\\{'
-    beginCaptures:
-      "0":
-        name: "meta.brace.curly.js"
-    end: '\\}\\}'
-    endCaptures:
-      "0":
-        name: "meta.brace.curly.js"
-    patterns: [
-      {
-        include: "source.js"
-      }
-    ]
-  "vue-template-expression-html":
-    begin: '\\{\\{\\{'
-    beginCaptures:
-      "0":
-        name: "meta.brace.curly.js"
-    end: '\\}\\}\\}'
-    endCaptures:
-      "0":
-        name: "meta.brace.curly.js"
-    patterns: [
-      {
-        include: "source.js"
       }
     ]
 scopeName: "text.html.vue"
