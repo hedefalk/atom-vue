@@ -486,6 +486,9 @@ patterns: [
           {
             include: "source.js"
           }
+          {
+            include: "source.js.jsx"
+          }
         ]
       }
     ]
