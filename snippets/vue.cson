@@ -8,13 +8,6 @@
 
       <script>
       export default {
-        data: () => ({
-          // data
-        }),
-        computed: {},
-        mounted () {},
-        methods: {},
-        components: {}
       }
       </script>
 
