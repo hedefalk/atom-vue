@@ -499,7 +499,8 @@ patterns: [
         patterns: [
           {
             name: "comment.line.double-slash.js"
-            match: "(//).*?((?=</script)|$\\n?)"
+            begin: "//"
+            end: "$|(?=</script)"
             captures:
               "1":
                 name: "punctuation.definition.comment.js"
