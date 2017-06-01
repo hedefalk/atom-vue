@@ -110,7 +110,7 @@ patterns: [
     include: "#embedded-code"
   }
   {
-    name: "source.stylus.embedded.html"
+    name: "source.css.stylus.embedded.html"
     begin: "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=[\"']stylus[\"'])"
     end: "(</)((?i:style))(>)(?:\\s*\\n)?"
     captures:
