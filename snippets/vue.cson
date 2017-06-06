@@ -15,3 +15,8 @@
       </style>
 
     """
+  "Router link":
+    "prefix": "router-link"
+    "body": """
+      <router-link :to="{ name: '', params: {} }"></router-link>
+    """
