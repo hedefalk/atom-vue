@@ -658,7 +658,7 @@ repository:
     ]
   "vue-directive":
     name: "meta.directive.vue"
-    begin: "(?:\\b(v-)|(:|@))([a-zA-Z][0-9a-zA-Z\\-\\:\\.]+)\\s*(=)"
+    begin: "(?:\\b(v-)|(:|@))([a-zA-Z][0-9a-zA-Z\\-\\:\\._]+)\\s*(=)"
     end: "(?<='|\")"
     captures:
       "1":
@@ -769,7 +769,7 @@ repository:
     ]
   "tag-generic-attribute":
     name: "entity.other.attribute-name.html"
-    match: "\\b([a-zA-Z\\-:]+)"
+    match: "\\b([a-zA-Z\\-:_]+)"
   "tag-id-attribute":
     name: "meta.attribute-with-value.id.html"
     begin: "\\b(id)\\b\\s*(=)"
