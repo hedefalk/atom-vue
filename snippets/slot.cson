@@ -1,0 +1,6 @@
+".text.html.vue":
+  "slot tag":
+    "prefix": "slot"
+    "body": """
+      <slot ${1:name="${2:name}"}>$3</slot>
+    """
