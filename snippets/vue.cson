@@ -3,7 +3,7 @@
     "prefix": "template"
     "body": """
       <template lang="${1:html}">
-        $3
+        $4
       </template>
 
       <script>
@@ -11,7 +11,7 @@
       }
       </script>
 
-      <style lang="${2:css}">
+      <style lang="${2:css}" ${3:scoped}>
       </style>
 
     """
