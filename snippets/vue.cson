@@ -20,3 +20,9 @@
     "body": """
       <router-link :to="{ name: '', params: {} }"></router-link>
     """
+  "Nuxt":
+    "prefix": "nuxt"
+    "body": """<nuxt />"""
+  "Nuxt Link":
+    "prefix": "nuxt-link"
+    "body": """<nuxt-link to=\"$1\">$2</nuxt-link>"""
