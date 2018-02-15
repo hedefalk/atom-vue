@@ -1,0 +1,6 @@
+'.text.html.vue':
+  'editor':
+    'autoIndentOnPaste': true
+    'softTabs': true
+    'increaseIndentPattern': '^\\s*((<.*[^>])|>)\\s*$'
+    'decreaseIndentPattern': '^\\s*>\\s*$'
