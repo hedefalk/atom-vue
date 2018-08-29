@@ -399,7 +399,7 @@ patterns: [
        end: "(?=</(?i:template))"
        patterns: [
          {
-           include: "source.haml"
+           include: "text.haml"
          }
        ]
      }
