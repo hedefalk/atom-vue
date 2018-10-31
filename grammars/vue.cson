@@ -743,6 +743,9 @@ repository:
         name: "meta.brace.curly.js"
     patterns: [
       {
+        include: "source.js.jsx"
+      },
+      {
         include: "source.js"
       }
     ]
@@ -756,6 +759,9 @@ repository:
       "0":
         name: "meta.brace.curly.js"
     patterns: [
+      {
+        include: "source.js.jsx"
+      },
       {
         include: "source.js"
       }

@@ -97,3 +97,11 @@ div id="footer"
 %p
   {{ greeting }} world!
 </template>
+
+<!--
+  Use source.js.jsx over source.js in vue-template-expression
+-->
+
+<template>
+  <h3 class="method">{{$method_text this.hello()}}</h3>
+</template>
