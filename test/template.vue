@@ -87,3 +87,13 @@ div id="footer"
   == partial('footer')
   | Copyright &copy; ${this.year} ${this.author}
 </template>
+
+<!--
+  Support text.haml
+  https://github.com/hedefalk/atom-vue/issues/87
+-->
+
+<template lang="haml">
+%p
+  {{ greeting }} world!
+</template>
