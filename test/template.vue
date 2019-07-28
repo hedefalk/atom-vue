@@ -105,3 +105,12 @@ div id="footer"
 <template>
   <h3 class="method">{{$method_text this.hello()}}</h3>
 </template>
+
+<!--
+  Support # shorthand
+  https://github.com/hedefalk/atom-vue/pull/101
+-->
+
+<template>
+  <header #title="Hi">Hello, world!</header>
+</template>
