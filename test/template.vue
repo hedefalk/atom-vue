@@ -114,3 +114,17 @@ div id="footer"
 <template>
   <header #title="Hi">Hello, world!</header>
 </template>
+
+<!--
+  Fix incomplete scopes for "/>" and "</"
+  https://github.com/hedefalk/atom-vue/issues/103
+-->
+
+<template>
+  <!-- "/>" OK -->
+  <!-- Both chars have punctuation.definition.tag.end.html -->
+  <input />
+  <!-- "/>" Not OK -->
+  <!-- Only ">" has the scope -->
+  <CustomInput />
+</template>
