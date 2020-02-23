@@ -1,19 +1,52 @@
 ".text.html.vue":
-  "Vue Component":
-    "prefix": "template"
+  "Vue Component typescript":
+    "prefix": "temt"
     "body": """
-      <template lang="${1:html}">
-        $4
+      <template>
+        <div class="${1}">
+
+        </div>
       </template>
 
-      <script>
-      export default {
-      }
+      <script lang="ts">
+        import { Vue, Component } from 'vue-property-decorator'
+        @Component({
+          name: '${1}'
+        })
+        export default class extends Vue {
+          created() {
+          }
+        }
       </script>
 
       <style lang="${2:css}" ${3:scoped}>
       </style>
+    """
+  "Vue Component script":
+    "prefix": "tems"
+    "body": """
+      <template>
+        <div class="${1}">
 
+        </div>
+      </template>
+
+      <script>
+        export default {
+          name: '${1}',
+          data() {
+            return {
+            }
+          },
+          mounted() {
+          },
+          methods: {
+          },
+        }
+      </script>
+      
+      <style lang="${2:css}" ${3:scoped}>
+      </style>
     """
   "Router link":
     "prefix": "router-link"
