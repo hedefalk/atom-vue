@@ -1,4 +1,31 @@
 ".text.html.vue":
+  "Vue Component nuxtjs typescript":
+    "prefix": "temn"
+    "body": """
+      <template>
+        <div class="${1}">
+
+        </div>
+      </template>
+
+      <script lang="ts">
+        import { Vue, Component } from 'nuxt-property-decorator'
+        @Component({
+          name: '${1}'
+        })
+        export default class extends Vue {
+          async asyncData(context: any) {
+          }
+          async fetch(context: any) {
+          }
+          created() {
+          }
+        }
+      </script>
+
+      <style lang="${2:css}" ${3:scoped}>
+      </style>
+    """
   "Vue Component typescript":
     "prefix": "temt"
     "body": """
@@ -44,7 +71,7 @@
           },
         }
       </script>
-      
+
       <style lang="${2:css}" ${3:scoped}>
       </style>
     """
