@@ -14,14 +14,10 @@
           name: '${1}'
         })
         export default class extends Vue {
-          async asyncData(context: any) {
-          }
-          async fetch(context: any) {
-          }
-          created() {
-          }
-          mounted() {
-          }
+          async asyncData(context: any) {}
+          async fetch(context: any) {}
+          created() {}
+          mounted() {}
         }
       </script>
 
@@ -43,8 +39,8 @@
           name: '${1}'
         })
         export default class extends Vue {
-          created() {
-          }
+          created() {}
+          mounted() {}
         }
       </script>
 
