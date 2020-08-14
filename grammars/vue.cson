@@ -808,7 +808,7 @@ repository:
   "tag-id-attribute":
     name: "meta.attribute-with-value.id.html"
     begin: "\\b(id)\\b\\s*(=)"
-    end: "(?<='|\")"
+    end: "(?!\\G)|(?=\\s|/?>)",
     captures:
       "1":
         name: "entity.other.attribute-name.id.html"
@@ -854,6 +854,10 @@ repository:
             include: "#entities"
           }
         ]
+      }
+      {
+        name: "string.unquoted.html"
+        match: "([^\\s&>\"'<=`]|&(?=>))+"
       }
     ]
   "tag-stuff":
