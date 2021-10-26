@@ -1,3 +1,7 @@
+## Warning!
+
+Abandonware. I'm not maintaining this at all since I'm not using Atom anymore. If someone wants to take charge, please feel free to contact me. Currently, I can't even validate any PR:s. I don't want to block anyone that actually uses it. // @hedefalk
+
 # Vue component support in Atom
 
 Adds syntax highlighting and snippets to Vue component files in Atom.
