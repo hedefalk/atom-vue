@@ -66,7 +66,7 @@ patterns: [
     patterns: [
       {
         name: "invalid.illegal.bad-comments-or-CDATA.html"
-        match: "--"
+        match: "--(?!-*\\s*>)"
       }
       {
         include: "#embedded-code"
