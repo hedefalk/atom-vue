@@ -893,7 +893,7 @@ div.class
 </template>
 `
       );
-
+      // TODO
     });
 
     it("support 'text.slm'", () => {
@@ -925,7 +925,7 @@ div id="footer"
 </template>
 `
       );
-
+      // TODO
     });
 
     it("supports 'text.haml'", () => {
@@ -939,7 +939,7 @@ div id="footer"
 </template>
 `
       );
-
+      // TODO
     });
 
     it("use 'source.js.jsx' over 'source.js' in vue-template-expression", () => {
@@ -951,7 +951,7 @@ div id="footer"
 </template>
 `
       );
-
+      // TODO
     });
 
     it("supports # shorthand", () => {
@@ -964,7 +964,7 @@ div id="footer"
 </template>
 `
       );
-
+      // TODO
     });
 
     it("fix incomplete scopes for '/>' and '</'", () => {
@@ -982,7 +982,7 @@ div id="footer"
 </template>
 `
       );
-
+      // TODO 
     });
 
   });
