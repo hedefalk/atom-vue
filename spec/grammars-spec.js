@@ -784,7 +784,7 @@ a
 </template>
 `
       );
-
+      // TODO
     });
 
     it("highlight template expressions", () => {
@@ -815,6 +815,70 @@ div.class
 `
       );
 
+      expect(tokens[0]).toEqual({
+        value: "<",
+        scopes: [ "text.html.vue", "source.pug.embedded.html", "punctuation.definition.tag.html" ]
+      });
+
+      expect(tokens[1]).toEqual({
+        value: "template",
+        scopes: [ "text.html.vue", "source.pug.embedded.html", "entity.name.tag.style.html" ]
+      });
+
+      expect(tokens[2]).toEqual({
+        value: " ",
+        scopes: [ "text.html.vue", "source.pug.embedded.html" ]
+      });
+
+      expect(tokens[3]).toEqual({
+        value: "lang",
+        scopes: [ "text.html.vue", "source.pug.embedded.html", "entity.other.attribute-name.html" ]
+      });
+
+      expect(tokens[4]).toEqual({
+        value: "=",
+        scopes: [ "text.html.vue", "source.pug.embedded.html" ]
+      });
+
+      expect(tokens[5]).toEqual({
+        value: '"',
+        scopes: [ "text.html.vue", "source.pug.embedded.html", "string.quoted.double.html", "punctuation.definition.string.begin.html" ]
+      });
+
+      expect(tokens[6]).toEqual({
+        value: "pug",
+        scopes: [ "text.html.vue", "source.pug.embedded.html", "string.quoted.double.html" ]
+      });
+
+      expect(tokens[7]).toEqual({
+        value: '"',
+        scopes: [ "text.html.vue", "source.pug.embedded.html", "string.quoted.double.html", "punctuation.definition.string.end.html" ]
+      });
+
+      expect(tokens[8]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "source.pug.embedded.html", "punctuation.definition.tag.html" ]
+      });
+
+      expect(tokens[9]).toEqual({
+        value: "\ndiv.class\n",
+        scopes: [ "text.html.vue", "source.pug.embedded.html" ]
+      });
+
+      expect(tokens[10]).toEqual({
+        value: "</",
+        scopes: [ "text.html.vue", "source.pug.embedded.html", "punctuation.definition.tag.html" ]
+      });
+
+      expect(tokens[11]).toEqual({
+        value: "template",
+        scopes: [ "text.html.vue", "source.pug.embedded.html", "entity.name.tag.style.html" ]
+      });
+
+      expect(tokens[12]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "source.pug.embedded.html", "punctuation.definition.tag.html" ]
+      });
     });
 
     it("check regexp performance", () => {
