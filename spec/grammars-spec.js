@@ -939,7 +939,71 @@ div id="footer"
 </template>
 `
       );
-      // TODO
+
+      expect(tokens[0]).toEqual({
+        value: "<",
+        scopes: [ "text.html.vue", "source.haml.embedded.html", "punctuation.definition.tag.html" ]
+      });
+
+      expect(tokens[1]).toEqual({
+        value: "template",
+        scopes: [ "text.html.vue", "source.haml.embedded.html", "entity.name.tag.style.html" ]
+      });
+
+      expect(tokens[2]).toEqual({
+        value: " ",
+        scopes: [ "text.html.vue", "source.haml.embedded.html" ]
+      });
+
+      expect(tokens[3]).toEqual({
+        value: "lang",
+        scopes: [ "text.html.vue", "source.haml.embedded.html", "entity.other.attribute-name.html" ]
+      });
+
+      expect(tokens[4]).toEqual({
+        value: "=",
+        scopes: [ "text.html.vue", "source.haml.embedded.html" ]
+      });
+
+      expect(tokens[5]).toEqual({
+        value: '"',
+        scopes: [ "text.html.vue", "source.haml.embedded.html", "string.quoted.double.html", "punctuation.definition.string.begin.html" ]
+      });
+
+      expect(tokens[6]).toEqual({
+        value: "haml",
+        scopes: [ "text.html.vue", "source.haml.embedded.html", "string.quoted.double.html" ]
+      });
+
+      expect(tokens[7]).toEqual({
+        value: '"',
+        scopes: [ "text.html.vue", "source.haml.embedded.html", "string.quoted.double.html", "punctuation.definition.string.end.html" ]
+      });
+
+      expect(tokens[8]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "source.haml.embedded.html", "punctuation.definition.tag.html" ]
+      });
+
+      expect(tokens[9]).toEqual({
+        value: "\n%p\n  {{ greeting }} world!\n",
+        scopes: [ "text.html.vue", "source.haml.embedded.html" ]
+      });
+
+      expect(tokens[10]).toEqual({
+        value: "</",
+        scopes: [ "text.html.vue", "source.haml.embedded.html", "punctuation.definition.tag.html" ]
+      });
+
+      expect(tokens[11]).toEqual({
+        value: "template",
+        scopes: [ "text.html.vue", "source.haml.embedded.html", "entity.name.tag.style.html" ]
+      });
+
+      expect(tokens[12]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "source.haml.embedded.html", "punctuation.definition.tag.html" ]
+      });
     });
 
     it("use 'source.js.jsx' over 'source.js' in vue-template-expression", () => {
@@ -951,6 +1015,7 @@ div id="footer"
 </template>
 `
       );
+
       // TODO
     });
 
