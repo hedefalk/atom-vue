@@ -493,5 +493,77 @@ a
 
     });
 
+    it("supports language-todo correctly", () => {
+
+      let { tokens } = grammar.tokenizeLine(
+`\
+<script>
+// NOTE: this 'NOTE' should be highlighted
+// NOTE: this 'NOTE' should be highlighted too </script>
+`
+      );
+
+      expect(tokens[0]).toEqual({
+        value: "<",
+        scopes: [ "text.html.vue", "source.js.embedded.html", "punctuation.definition.tag.html" ]
+      });
+
+      expect(tokens[1]).toEqual({
+        value: "script",
+        scopes: [ "text.html.vue", "source.js.embedded.html", "entity.name.tag.script.html" ]
+      });
+
+      expect(tokens[2]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "source.js.embedded.html", "punctuation.definition.tag.html" ]
+      });
+
+      expect(tokens[3]).toEqual({
+        value: "\n",
+        scopes: [ "text.html.vue", "source.js.embedded.html" ]
+      });
+
+      expect(tokens[4]).toEqual({
+        value: "//",
+        scopes: [ "text.html.vue", "source.js.embedded.html", "comment.line.double-slash.js" ]
+      });
+
+      expect(tokens[5]).toEqual({
+        value: " NOTE: this 'NOTE' should be highlighted",
+        scopes: [ "text.html.vue", "source.js.embedded.html", "comment.line.double-slash.js" ]
+      });
+
+      expect(tokens[6]).toEqual({
+        value: "\n",
+        scopes: [ "text.html.vue", "source.js.embedded.html" ]
+      });
+
+      expect(tokens[7]).toEqual({
+        value: "//",
+        scopes: [ "text.html.vue", "source.js.embedded.html", "comment.line.double-slash.js" ]
+      });
+
+      expect(tokens[8]).toEqual({
+        value: " NOTE: this 'NOTE' should be highlighted too ",
+        scopes: [ "text.html.vue", "source.js.embedded.html", "comment.line.double-slash.js" ]
+      });
+
+      expect(tokens[9]).toEqual({
+        value: "</",
+        scopes: [ "text.html.vue", "source.js.embedded.html", "punctuation.definition.tag.html" ]
+      });
+
+      expect(tokens[10]).toEqual({
+        value: "script",
+        scopes: [ "text.html.vue", "source.js.embedded.html", "entity.name.tag.script.html" ]
+      });
+
+      expect(tokens[11]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "source.js.embedded.html", "punctuation.definition.tag.html" ]
+      });
+      
+    });
+
   });
 });
