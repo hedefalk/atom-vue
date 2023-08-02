@@ -954,7 +954,7 @@ div id="footer"
       // TODO
     });
 
-    it("supports # shorthand", () => {
+    it("supports '#' shorthand", () => {
       // https://github.com/hedefalk/atom-vue/pull/101
 
       let { tokens } = grammar.tokenizeLine(
@@ -964,7 +964,116 @@ div id="footer"
 </template>
 `
       );
-      // TODO
+
+      expect(tokens[0]).toEqual({
+        value: "<",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.begin.html" ]
+      });
+
+      expect(tokens[1]).toEqual({
+        value: "template",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "entity.name.tag.other.html" ]
+      });
+
+      expect(tokens[2]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.end.html" ]
+      });
+
+      expect(tokens[3]).toEqual({
+        value: "\n  ",
+        scopes: [ "text.html.vue" ]
+      });
+
+      expect(tokens[4]).toEqual({
+        value: "<",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.begin.html" ]
+      });
+
+      expect(tokens[5]).toEqual({
+        value: "header",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "entity.name.tag.other.html" ]
+      });
+
+      expect(tokens[6]).toEqual({
+        value: " ",
+        scopes: [ "text.html.vue", "meta.tag.other.html" ]
+      });
+
+      expect(tokens[7]).toEqual({
+        value: "#",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "meta.directive.vue", "punctuation.separator.key-value.html" ]
+      });
+
+      expect(tokens[8]).toEqual({
+        value: "title",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "meta.directive.vue", "entity.other.attribute-name.html" ]
+      });
+
+      expect(tokens[9]).toEqual({
+        value: "=",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "meta.directive.vue", "punctuation.separator.key-value.html" ]
+      });
+
+      expect(tokens[10]).toEqual({
+        value: '"',
+        scopes: [ "text.html.vue", "meta.tag.other.html", "meta.directive.vue", "source.directive.vue", "punctuation.definition.string.begin.html" ]
+      });
+
+      expect(tokens[11]).toEqual({
+        value: "Hi",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "meta.directive.vue", "source.directive.vue" ]
+      });
+
+      expect(tokens[12]).toEqual({
+        value: '"',
+        scopes: [ "text.html.vue", "meta.tag.other.html", "meta.directive.vue", "source.directive.vue", "punctuation.definition.string.end.html" ]
+      });
+
+      expect(tokens[13]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.end.html" ]
+      });
+
+      expect(tokens[14]).toEqual({
+        value: "Hello, world!",
+        scopes: [ "text.html.vue" ]
+      });
+
+      expect(tokens[15]).toEqual({
+        value: "</",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.begin.html" ]
+      });
+
+      expect(tokens[16]).toEqual({
+        value: "header",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "entity.name.tag.other.html" ]
+      });
+
+      expect(tokens[17]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.end.html" ]
+      });
+
+      expect(tokens[18]).toEqual({
+        value: "\n",
+        scopes: [ "text.html.vue" ]
+      });
+
+      expect(tokens[19]).toEqual({
+        value: "</",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.begin.html" ]
+      });
+
+      expect(tokens[20]).toEqual({
+        value: "template",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "entity.name.tag.other.html" ]
+      });
+
+      expect(tokens[21]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.end.html" ]
+      });
     });
 
     it("fix incomplete scopes for '/>' and '</'", () => {
@@ -982,7 +1091,7 @@ div id="footer"
 </template>
 `
       );
-      // TODO 
+      // TODO
     });
 
   });
