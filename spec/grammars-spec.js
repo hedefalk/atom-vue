@@ -589,6 +589,181 @@ a
 `
       );
 
+      expect(tokens[0]).toEqual({
+        value: "<",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.begin.html" ]
+      });
+
+      expect(tokens[1]).toEqual({
+        value: "template",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "entity.name.tag.other.html" ]
+      });
+
+      expect(tokens[2]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.end.html" ]
+      });
+
+      expect(tokens[3]).toEqual({
+        value: "\n  ",
+        scopes: [ "text.html.vue" ]
+      });
+
+      expect(tokens[4]).toEqual({
+        value: "<",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.begin.html" ]
+      });
+
+      expect(tokens[5]).toEqual({
+        value: "base-view",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "entity.name.tag.other.html" ]
+      });
+
+      expect(tokens[6]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.end.html" ]
+      });
+
+      expect(tokens[7]).toEqual({
+        value: "\n    ",
+        scopes: [ "text.html.vue" ]
+      });
+
+      expect(tokens[8]).toEqual({
+        value: "<",
+        scopes: [ "text.html.vue", "meta.tag.block.any.html", "punctuation.definition.tag.begin.html" ]
+      });
+
+      expect(tokens[9]).toEqual({
+        value: "div",
+        scopes: [ "text.html.vue", "meta.tag.block.any.html", "entity.name.tag.block.any.html" ]
+      });
+
+      expect(tokens[10]).toEqual({
+        value: " ",
+        scopes: [ "text.html.vue", "meta.tag.block.any.html" ]
+      });
+
+      expect(tokens[11]).toEqual({
+        value: "slot",
+        scopes: [ "text.html.vue", "meta.tag.block.any.html", "entity.other.attribute-name.html" ]
+      });
+
+      expect(tokens[12]).toEqual({
+        value: "=",
+        scopes: [ "text.html.vue", "meta.tag.block.any.html" ]
+      });
+
+      expect(tokens[13]).toEqual({
+        value: '"',
+        scopes: [ "text.html.vue", "meta.tag.block.any.html", "string.quoted.double.html", "punctuation.definition.string.begin.html" ]
+      });
+
+      expect(tokens[14]).toEqual({
+        value: "page-body",
+        scopes: [ "text.html.vue", "meta.tag.block.any.html", "string.quoted.double.html" ]
+      });
+
+      expect(tokens[15]).toEqual({
+        value: '"',
+        scopes: [ "text.html.vue", "meta.tag.block.any.html", "string.quoted.double.html", "punctuation.definition.string.end.html" ]
+      });
+
+      expect(tokens[16]).toEqual({
+        value: " ",
+        scopes: [ "text.html.vue", "meta.tag.block.any.html" ]
+      });
+
+      expect(tokens[17]).toEqual({
+        value: "class",
+        scopes: [ "text.html.vue", "meta.tag.block.any.html", "entity.other.attribute-name.html" ]
+      });
+
+      expect(tokens[18]).toEqual({
+        value: "=",
+        scopes: [ "text.html.vue", "meta.tag.block.any.html" ]
+      });
+
+      expect(tokens[19]).toEqual({
+        value: '"',
+        scopes: [ "text.html.vue", "meta.tag.block.any.html", "string.quoted.double.html", "punctuation.definition.string.begin.html" ]
+      });
+
+      expect(tokens[20]).toEqual({
+        value: "row",
+        scopes: [ "text.html.vue", "meta.tag.block.any.html", "string.quoted.double.html" ]
+      });
+
+      expect(tokens[21]).toEqual({
+        value: '"',
+        scopes: [ "text.html.vue", "meta.tag.block.any.html", "string.quoted.double.html", "punctuation.definition.string.end.html" ]
+      });
+
+      expect(tokens[22]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "meta.tag.block.any.html", "punctuation.definition.tag.end.html" ]
+      });
+
+      expect(tokens[23]).toEqual({
+        value: "\n      Your content here!\n    ",
+        scopes: [ "text.html.vue" ]
+      });
+
+      expect(tokens[24]).toEqual({
+        value: "</",
+        scopes: [ "text.html.vue", "meta.tag.block.any.html", "punctuation.definition.tag.begin.html" ]
+      });
+
+      expect(tokens[25]).toEqual({
+        value: "div",
+        scopes: [ "text.html.vue", "meta.tag.block.any.html", "entity.name.tag.block.any.html" ]
+      });
+
+      expect(tokens[26]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "meta.tag.block.any.html", "punctuation.definition.tag.end.html" ]
+      });
+
+      expect(tokens[27]).toEqual({
+        value: "\n  ",
+        scopes: [ "text.html.vue" ]
+      });
+
+      expect(tokens[28]).toEqual({
+        value: "</",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.begin.html" ]
+      });
+
+      expect(tokens[29]).toEqual({
+        value: "base-view",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "entity.name.tag.other.html" ]
+      });
+
+      expect(tokens[30]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.end.html" ]
+      });
+
+      expect(tokens[31]).toEqual({
+        value: "\n",
+        scopes: [ "text.html.vue" ]
+      });
+
+      expect(tokens[32]).toEqual({
+        value: "</",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.begin.html" ]
+      });
+
+      expect(tokens[33]).toEqual({
+        value: "template",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "entity.name.tag.other.html" ]
+      });
+
+      expect(tokens[34]).toEqual({
+        value: ">",
+        scopes: [ "text.html.vue", "meta.tag.other.html", "punctuation.definition.tag.end.html" ]
+      });
+
     });
 
     it("highlight embedded expressions", () => {
