@@ -532,11 +532,13 @@ patterns: [
   }
   {
     name: "source.js.embedded.html"
-    begin: "(?:^\\s+)?(<)((?i:script))\\b(?![^>]*/>|lang=[\"'].*[\"'])"
+    begin: "(?:^\\s+)?((<)((?i:script)))\\b(?![^>]*\/>|lang=[\"'].*[\"'])"
     beginCaptures:
       "1":
-        name: "punctuation.definition.tag.html"
+        name: "meta.tag.other.html"
       "2":
+        name: "punctuation.definition.tag.html"
+      "3":
         name: "entity.name.tag.script.html"
     end: "(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?"
     endCaptures:
@@ -547,12 +549,14 @@ patterns: [
         include: "#tag-stuff"
       }
       {
-        begin: "(?<!</(?:script|SCRIPT))(>)"
-        end: "(</)((?i:script))"
+        begin: "(?<!<\/(?:script|SCRIPT))(>)"
+        end: "((<\/)((?i:script)))"
         captures:
           "1":
-            name: "punctuation.definition.tag.html"
+            name: "meta.tag.other.html"
           "2":
+            name: "punctuation.definition.tag.html"
+          "3":
             name: "entity.name.tag.script.html"
         patterns: [
           {
