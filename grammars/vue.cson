@@ -288,15 +288,24 @@ patterns: [
   }
   {
     name: "source.css.embedded.html"
-    begin: "(?:^\\s+)?(<)((?i:style))\\b(?![^>]*/>|lang=[\"'].*[\"'])"
-    captures:
+    begin: "(?:^\\s+)?((<)((?i:style)))\\b(?![^>]*\/>|lang=[\"'].*[\"'])"
+    beginCaptures:
       "1":
-        name: "punctuation.definition.tag.html"
+        name: "meta.tag.other.html"
       "2":
-        name: "entity.name.tag.style.html"
-      "3":
         name: "punctuation.definition.tag.html"
-    end: "(</)((?i:style))(>)(?:\\s*\\n)?"
+      "3":
+        name: "entity.name.tag.style.html"
+    end: "((<\/)((?i:style))(>))(?:\\s*\\n)?"
+    endCaptures:
+      "1":
+        name: "meta.tag.other.html"
+      "2":
+        name: "punctuation.definition.tag.html"
+      "3":
+        name: "entity.name.tag.style.html"
+      "4":
+        name: "punctuation.definition.tag.html"
     patterns: [
       {
         include: "#tag-stuff"
