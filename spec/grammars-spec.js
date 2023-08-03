@@ -514,17 +514,17 @@ a
 
       expect(tokens[0]).toEqual({
         value: "<",
-        scopes: [ "text.html.vue", "source.js.embedded.html", "punctuation.definition.tag.html" ]
+        scopes: [ "text.html.vue", "source.js.embedded.html", "meta.tag.other.html", "punctuation.definition.tag.html" ]
       });
 
       expect(tokens[1]).toEqual({
         value: "script",
-        scopes: [ "text.html.vue", "source.js.embedded.html", "entity.name.tag.script.html" ]
+        scopes: [ "text.html.vue", "source.js.embedded.html", "meta.tag.other.html", "entity.name.tag.script.html" ]
       });
 
       expect(tokens[2]).toEqual({
         value: ">",
-        scopes: [ "text.html.vue", "source.js.embedded.html", "punctuation.definition.tag.html" ]
+        scopes: [ "text.html.vue", "source.js.embedded.html", "meta.tag.other.html" ]
       });
 
       expect(tokens[3]).toEqual({
@@ -559,12 +559,12 @@ a
 
       expect(tokens[9]).toEqual({
         value: "</",
-        scopes: [ "text.html.vue", "source.js.embedded.html", "punctuation.definition.tag.html" ]
+        scopes: [ "text.html.vue", "source.js.embedded.html", "meta.tag.other.html", "punctuation.definition.tag.html" ]
       });
 
       expect(tokens[10]).toEqual({
         value: "script",
-        scopes: [ "text.html.vue", "source.js.embedded.html", "entity.name.tag.script.html" ]
+        scopes: [ "text.html.vue", "source.js.embedded.html", "meta.tag.other.html", "entity.name.tag.script.html" ]
       });
 
       expect(tokens[11]).toEqual({
