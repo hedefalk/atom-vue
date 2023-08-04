@@ -1,12 +1,12 @@
 ## Warning!
 
-Abandonware. I'm not maintaining this at all since I'm not using Atom anymore. If someone wants to take charge, please feel free to contact me. Currently, I can't even validate any PR:s. I don't want to block anyone that actually uses it. // @hedefalk
+Maintenance Mode: While this package is no longer maintained by @hedefalk, this package is still receiving maintenance as needed. // @confused-Techie
 
-# Vue component support in Atom
+# Vue component support in Atom/Pulsar
 
-Adds syntax highlighting and snippets to Vue component files in Atom.
+Adds syntax highlighting and snippets to Vue component files in Pulsar.
 
-Originally [converted](http://flight-manual.atom.io/hacking-atom/sections/converting-from-textmate/) from [vuejs/vue-syntax-highlight](https://github.com/vuejs/vue-syntax-highlight/tree/479672799b4162996e3c3c7e09583fb6d98e1e6c).
+Originally [converted](https://pulsar-edit.dev/docs/launch-manual/sections/core-hacking/#converting-from-textmate) from [vuejs/vue-syntax-highlight](https://github.com/vuejs/vue-syntax-highlight/tree/479672799b4162996e3c3c7e09583fb6d98e1e6c).
 
 ## Working with SCSS/Sass
 
