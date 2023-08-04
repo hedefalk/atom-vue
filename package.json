@@ -1,6 +1,6 @@
 {
   "name": "language-vue",
-  "version": "0.26.0",
+  "version": "0.26.1",
   "description": "Vue component support in Atom",
   "repository": "https://github.com/hedefalk/atom-vue",
   "license": "MIT",
